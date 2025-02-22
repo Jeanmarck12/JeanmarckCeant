@@ -1,0 +1,2148 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 50px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  /* Adjust navigation spacing */
+  .fixed-nav ul li {
+    margin: 0 1rem;
+  }
+  
+  /* Reduce padding in sections */
+  section {
+    padding: 40px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* Further adjustments for small devices */
+  .fixed-nav ul li {
+    margin: 0 0.5rem;
+    font-size: 0.9em;
+  }
+  
+  /* Scale down images and text */
+  .club-card img,
+  .sport-image {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+body {
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+body {
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+
+
+
+
+
+
+/* Dark Mode - Everything Turns Green */
+body.dark-mode {
+  background-color: #121212;
+  color: #5cb85c; /* Green text */
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Header & Navbar */
+header {
+  background: #333;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
+}
+
+header nav ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+
+header nav ul li {
+  display: inline;
+  margin: 0 1.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 0.5s forwards ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 1.2em;
+}
+
+header nav ul li a:hover {
+  color: #f0f0f0;
+}
+
+.nav-title {
+  color: #5cb85c; /* Green color */
+}
+
+/* Make each nav list item use inline-flex for vertical centering */
+.fixed-nav ul li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+
+/* Adjust the toggle switch so it’s vertically centered and without extra margins */
+.fixed-nav .switch {
+  margin: 0;
+  vertical-align: middle;
+}
+
+
+
+
+
+
+/* General Button Styling */
+.email-button, .resume-button {
+  display: inline-block;
+  background-color: #3498db; /* Resume button color */
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  margin: 10px;
+}
+
+/* Hover Effect */
+.email-button:hover, .resume-button:hover {
+  background-color: #2980b9; /* Slightly darker blue on hover */
+  transform: scale(1.05);
+}
+
+/* Click Effect */
+.email-button:active, .resume-button:active {
+  transform: scale(0.95);
+}
+
+
+
+/* Dark Mode Email - Green Text */
+body.dark-mode .email-button:hover, .resume-button:hover  {
+  color: #5cb85c;
+}
+
+body.dark-mode .email-button:hover, .resume-button:hover {
+  color: #3a8f3a;
+
+}
+
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Main Content */
+main {
+  padding:  30px;
+  margin-top: 100px;
+}
+
+section {
+  padding: 60px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Sections Become Green in Dark Mode */
+body.dark-mode section {
+  background: #1e1e1e;
+  color: #5cb85c;
+}
+
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Dark Mode - Footer */
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #5cb85c;
+}
+
+
+/* Home Section */
+#home {
+  text-align: center;
+  padding: 150px 0;
+  background: linear-gradient(to right, #4ab0e8, #c779d0);
+  color: white;
+}
+
+#home h1 {
+  font-size: 4em;
+  margin-bottom: 0.75em;
+}
+
+#home .tagline {
+  font-size: 2em;
+  font-style: italic;
+}
+
+
+
+/* Resume Button */
+.resume-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 18px 30px;
+  font-size: 22px;
+  color: white;
+  background: #3498db;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.resume-button:hover {
+  background: #217dbb;
+}
+
+
+/* Resume Button Dark Mode */
+body.dark-mode .resume-button {
+  background: #5cb85c;
+  color: black;
+}
+
+
+/* NYU Education Section Styles */
+#Education {
+  background-color: #f0edf9;
+  /* Light violet background */
+  color: #333;
+  /* Dark text for contrast */
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 3px solid #7c3aed;
+  /* Subtle separator line */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+#Education h1 {
+  color: #663399;
+  /* NYU Violet for the heading */
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
+}
+
+#Education p {
+  font-size: 1.6em;
+  line-height: 1.8;
+  margin-bottom: 1em;
+}
+
+#Education .degree-info {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+body.dark-mode #Education p,
+body.dark-mode #Education .degree-info {
+  color: hsl(308, 100%, 93%);
+}
+
+
+#Education .nyu-logo img {
+  width: 100px;
+  /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+  /* Optional animated entrance */
+}
+
+/* Dark Mode for Education Section */
+body.dark-mode #Education {
+  background-color: #1a1a1a;
+  /* Darker background */
+  color: #eee;
+  /* Lighter text */
+  border-bottom-color: #94618e;
+  /* Lighter violet for separator */
+}
+
+body.dark-mode #Education h1 {
+  color: #94618e;
+  /* Lighter violet for heading */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Clubs Section */
+#clubs {
+  background-color: #f0edf9;
+  /* Light violet background */
+  color: #333;
+  /* Dark text for contrast */
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 3px solid #7c3aed;
+  /* Subtle separator line */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+#clubs .club-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;  /* Added gap for better spacing */
+
+}
+
+.club-card {
+  width: 320px;
+  margin: 15px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.club-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+
+/* Increased Text Sizes */
+.club-card h3 {
+  font-size: 1.8em;        /* Bigger title text */
+  margin-bottom: 10px;
+}
+
+.club-card p {
+  font-size: 1.6em;        /* Bigger paragraph text */
+}
+
+/* Or, to target just the headings in that section */
+#clubs h3 {
+  color: #663399;
+}
+body.dark-mode #clubs h3 {
+  color: #94618c;
+}
+#clubs p {
+  color: hsl(240, 33%, 1%);
+}
+body.dark-mode #clubs p {
+  color: hwb(309 87% 5%);
+}
+#clubs h1 {
+  font-size: 3.5em;       /* Increase the header size */
+  margin-bottom: 20px;
+  color: #663399;
+}
+
+body.dark-mode #clubs h1 {
+  color: #94618e;
+  /* Lighter violet for heading */
+}
+
+
+/* Dark Mode for Clubs Section */
+body.dark-mode #clubs {
+  background-color: #1a1a1a;  /* Darker background */
+  color: #eee;              /* Lighter text */
+  border-bottom-color: #94618e;  /* Lighter violet separator */
+}
+
+/* Dark Mode for individual club cards */
+body.dark-mode .club-card {
+  background-color: #2a2a2a;  /* Darker card background */
+  border-color: #555;        /* Darker border */
+  color: #eee;              /* Light text on card */
+}
+
+/* Optionally adjust hover effect in dark mode */
+body.dark-mode .club-card:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Language Section - Updated */
+#languages-section {
+  width: 100%;
+  max-width: 2000px; /* Increased width */
+  margin: auto;
+  /* Red to bluish gradient background */
+  background: linear-gradient(135deg, #ff9999, #99ccff);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 60px; /* Increased padding */
+  text-align: center;
+  position: relative;
+}
+
+#flag-container {
+  width: 300px;  /* Bigger container */
+  height: 225px; /* Bigger container */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+#flag-background {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 60px;
+}
+
+#language-switcher {
+  margin-top: 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  font-size: 1.9em;  /* Bigger button text */
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+#language-switcher:hover {
+  background-color: #003f80;
+}
+
+.language-proficiency {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  font-size: 1.1cm; /* Increased text size */
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+
+
+
+#languages-section h2 {
+  font-size: 3.5em;       /* Increase the header size */
+  margin-bottom: 20px;
+}
+
+#languages-section p#instruction-text {
+  font-size: 2.5em;     /* Increase the instruction text size */
+  margin-bottom: 20px;
+}
+
+#proficiency-card {
+  font-size: 3em;       /* Increase the proficiency text size */
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+
+/* Dark Mode Overrides for Language Section */
+body.dark-mode #languages-section {
+  /* Darker red-to-blue gradient */
+  background: linear-gradient(135deg, #330000, #003366);
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .language-proficiency {
+  background-color: #444;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #language-switcher {
+  background-color: #7c3aed;
+}
+
+body.dark-mode #language-switcher:hover {
+  background-color: #5d2dbb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Courses Section */
+#courses {
+  background: linear-gradient(135deg, #12102b, #4b0082); /* Dark blue-purple theme */
+  color: white;
+  padding: 70px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Circuit Design Overlay */
+#courses::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/circuit-board.png'); /* Tech pattern */
+  opacity: 0.2;
+  z-index: 0;
+}
+
+/* Course Grid */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Course Cards - Enlarged */
+.course-card {
+  position: relative;
+  width: 400px;              /* Increased card width */
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 30px;             /* Increased padding for more space */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;        /* Center text in card */
+}
+
+/* Unique Borders for Each Course */
+.course-card:nth-child(1) { border-left: 5px solid #ffcc00; } /* Yellow */
+.course-card:nth-child(2) { border-left: 5px solid #4ab0e8; } /* Blue */
+.course-card:nth-child(3) { border-left: 5px solid #ff6347; } /* Red */
+.course-card:nth-child(4) { border-left: 5px solid #32cd32; } /* Green */
+.course-card:nth-child(5) { border-left: 5px solid #ff69b4; } /* Pink */
+
+/* Hover Effect */
+.course-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Course Title */
+.course-card h3 a {
+  color: #ffcc00;
+  font-size: 1.8em;          /* Increased title size */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.course-card h3 a:hover {
+  color: #ffd700;
+}
+
+/* Course Description */
+.course-card p {
+  font-size: 1.3em;          /* Increased description text size */
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* Semester Text */
+.course-card .date {
+  font-size: 1.1em;          /* Increased semester text size */
+  font-weight: bold;
+  color: #bbb;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* Light Mode Overrides */
+body.light-mode #courses {
+  background: linear-gradient(135deg, #f0f0f0, #dcd6f7);
+  color: #333;
+}
+
+body.light-mode .course-card {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+body.light-mode .course-card h3 a {
+  color: #4b0082;
+}
+
+body.light-mode .course-card p {
+  color: #222;
+}
+
+/* Dark Mode - Green Theme */
+body.dark-mode #courses {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  color: white;
+}
+
+body.dark-mode .course-card {
+  background: rgba(40, 80, 40, 0.2);
+  color: white;
+  border-left-color: #5cb85c;
+}
+
+body.dark-mode .course-card h3 a {
+  color: #5cb85c;
+}
+
+body.dark-mode .course-card p {
+  color: #ccc;
+}
+
+/* Additional text size adjustments for the #courses section */
+#courses h2 {
+  font-size: 3.5em;
+}
+
+#courses h3 {
+  font-size: 1.8em;
+}
+
+#courses p {
+  font-size: 2em;
+}
+
+#courses span {
+  font-size: 1.3em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Work Section */
+#experience {
+  padding: 50px 0;
+  background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Soft gradient */
+  color: #333;
+}
+
+#experience .projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive staggered grid */
+  gap: 25px;
+  padding: 20px;
+  justify-content: center;
+}
+
+
+
+
+
+
+/* Center all text in project cards */
+.project-card {
+  text-align: center;
+}
+
+/* Dark Mode Overrides for Project Card Text */
+body.dark-mode .project-card,
+body.dark-mode .project-card h3,
+body.dark-mode .project-card p,
+body.dark-mode .project-card .tech,
+body.dark-mode .project-card a {
+  color: #5cb85c !important;
+}
+
+/* Project Cards - Enlarged with Bluish Undertone */
+.project-card {
+  position: relative;
+  background: linear-gradient(135deg, #e0f7ff, #cceeff); /* Light bluish gradient */
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;  /* Increased padding */
+  border-left: 5px solid #007BFF; /* Accent color remains blue */
+}
+
+/* Staggered Heights for Flow (increased) */
+.project-card:nth-child(odd) {
+  height: 320px;
+}
+.project-card:nth-child(even) {
+  height: 360px;
+}
+
+/* Hover Effects */
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Title */
+.project-card h3 {
+  font-size: 1.9em; /* Maintained font size */
+  margin-bottom: 10px;
+  color: #007BFF;  /* Blue accent */
+}
+
+/* Project Technologies */
+.project-card .tech {
+  font-size: 1.2em; /* Slightly larger */
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Project Description */
+.project-card .project-description {
+  font-size: 1.2em; /* Slightly larger */
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Call-to-Action Button - Enlarged */
+.project-card a {
+  display: inline-block;
+  margin-top: auto; /* Push button to bottom */
+  padding: 15px 25px; /* Increased padding */
+  font-size: 1.4em;   /* Slightly larger text */
+  font-weight: bold;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-card a:hover {
+  background: linear-gradient(135deg, #0056b3, #003f80);
+}
+
+/* Animated Background Glow on Hover */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Dark Mode Support */
+body.dark-mode #experience {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  color: white;
+}
+
+body.dark-mode .project-card {
+  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+  color: white;
+  border-color: #5cb85c; /* Green accent in dark mode */
+}
+
+body.dark-mode .project-card h3 {
+  color: #5cb85c; /* Adjusted for dark mode */
+}
+
+body.dark-mode .project-card .tech,
+body.dark-mode .project-card .project-description {
+  color: #ddd;
+}
+
+body.dark-mode .project-card a {
+  background: linear-gradient(135deg, hsl(0, 0%, 0%), hsl(120, 66%, 16%));
+}
+
+body.dark-mode .project-card a:hover {
+  background: linear-gradient(135deg, #3a8f3a, #2a6e2a);
+}
+
+/* Section Title for Projects */
+#projects h2 {
+  font-size: 3.5em;
+}
+/* Make the Projects section larger */
+#projects {
+  padding: 80px 0; /* Increased vertical padding for more space */
+}
+
+/* Enlarge the call-to-action buttons in project cards */
+.project-card a {
+  padding: 18px 30px !important; /* Increase button padding */
+  font-size: 1.3em !important;     /* Increase button text size */
+}
+
+
+
+#projects h2 {
+  font-size: 3.5em;
+}
+
+#projects h3 {
+  font-size: 2.1em;
+}
+
+#projects p {
+  font-size: 2em;
+}
+.project-card:nth-child(odd),
+.project-card:nth-child(even) {
+  min-height: 320px; /* or any value you want */
+  height: auto;      /* let content expand */
+}
+
+
+
+body.dark-mode .projects a {
+  color: hwb(251 38% 22%);
+}
+
+
+body.dark-mode .project-card a.github-link {
+  color: hwb(204 25% 10%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Currently Building Section */
+/* Currently Building Section */
+#building {
+  padding: 50px 0;
+  /* Lighter bluish gradient background */
+  background: linear-gradient(135deg, #cceeff, #99ddff);
+  color: #333;
+}
+
+.building-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive layout */
+  gap: 25px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Individual Project Progress Cards */
+.project-item {
+  background: linear-gradient(135deg, hsl(208, 63%, 77%), hsl(208, 87%, 94%)); /* Light gradient matching other sections */
+  border-left: 5px solid #007BFF; /* Accent color */
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Hover Effects */
+.project-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Project Title */
+.project-item h3 {
+  font-size: 1.6em;
+  color: #007BFF; /* Accent Blue */
+  margin-bottom: 15px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  transition: width 0.5s ease-in-out;
+}
+
+/* Completion Text */
+.project-item p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Interactive Playground */
+.interactive-playground {
+  text-align: center;
+  margin-top: 40px;
+  padding: 25px;
+  background: linear-gradient(135deg, hsl(208, 63%, 77%), #f7f7f7);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.interactive-playground h3 {
+  font-size: 1.6em;
+  color: #007BFF;
+}
+
+.interactive-playground a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 20px 40px;
+  font-size: 2 em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.interactive-playground a:hover {
+  background: linear-gradient(135deg, #0056b3, #003f80);
+}
+
+/* Dark Mode Support */
+body.dark-mode #building {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  color: white;
+}
+
+body.dark-mode .project-item {
+  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+  color: white;
+  border-color: #5cb85c; /* Green accent in dark mode */
+}
+
+body.dark-mode .project-item h3 {
+  color: #5cb85c;
+}
+
+body.dark-mode .progress-bar {
+  background: #444;
+}
+
+body.dark-mode .progress {
+  background: linear-gradient(135deg, #5cb85c, #3a8f3a);
+}
+
+body.dark-mode .interactive-playground {
+  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+}
+
+body.dark-mode .interactive-playground h3 {
+  color: #5cb85c;
+}
+
+body.dark-mode .interactive-playground a {
+  background: linear-gradient(135deg, #5cb85c, #3a8f3a);
+}
+
+body.dark-mode .interactive-playground a:hover {
+  background: linear-gradient(135deg, #3a8f3a, #2a6e2a);
+}
+
+body.dark-mode .project-item p {
+  color: #5cb85c !important;
+}
+
+#building h2 {
+  font-size: 3.5em;
+}
+
+#building h3{
+  font-size: 2.1em;
+}
+
+#building p{
+  font-size: 2em;
+}
+
+.project-item .progress-bar {
+  margin: 0 auto 12px auto;  /* Center the progress bar horizontally and add bottom margin */
+}
+
+.project-item p {
+  text-align: center;         /* Ensure the percentage text is centered */
+  margin: 0 auto;             /* Center the text block */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Work Experience Section */
+#experience {
+  padding: 70px 0;
+  background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Soft gradient */
+  color: #2c3e50;  /* Professional dark slate */
+  text-align: center;
+}
+
+/* Section Title - 3.5em */
+#experience h2 {
+  font-size: 3.5em;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Timeline Vertical Line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: #007BFF;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Timeline Items */
+.timeline-item {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff, #f7f7f7); /* Light gradient */
+  width: 45%;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 40px;
+}
+
+/* Staggering Effect */
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+/* Timeline Dots */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #007BFF;
+  border-radius: 50%;
+  top: 15px;
+  right: -10px;
+  border: 3px solid white;
+}
+
+.timeline-item:nth-child(even)::after {
+  left: -10px;
+}
+
+/* Hover Effects */
+.timeline-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Work Title - Increase text size */
+.timeline-item h3 {
+  font-size: 2em; /* Increased from 1.6em */
+  margin-bottom: 15px;
+  color: #007BFF; /* Accent Blue remains */
+}
+
+/* Work Description - Bigger text */
+.timeline-item p {
+  font-size: 1.5em; /* Increased from 1.1em */
+  color: #2c3e50; /* Dark slate for readability */
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Work Experience Links - Slightly larger */
+.timeline-item a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 15px;
+  font-size: 1.3em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.timeline-item a:hover {
+  background: linear-gradient(135deg, #0056b3, #003f80);
+}
+
+/* Dark Mode Support */
+body.dark-mode #experience {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  color: white;
+}
+
+body.dark-mode .timeline-item {
+  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+  color: white;
+}
+
+body.dark-mode .timeline-item h3 {
+  color: #5cb85c;
+}
+
+body.dark-mode .timeline-item p {
+  color: #ddd;
+}
+
+body.dark-mode .timeline-item a {
+  background: linear-gradient(135deg, #5cb85c, #3a8f3a);
+}
+
+body.dark-mode .timeline-item a:hover {
+  background: linear-gradient(135deg, #3a8f3a, #2a6e2a);
+}
+
+
+body.dark-mode #experience h2 {
+  color: #007BFF;
+}
+
+#experience p{
+  font-size: 1.6em;
+}
+
+
+
+
+/* Active Activities Section */
+
+/* Sport Images - Circular (Enlarged) */
+.sport-image {
+  width: 150px;  /* Increased from 120px */
+  height: 150px; /* Increased from 120px */
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #007BFF; /* Blue border */
+  margin-bottom: 20px; /* More spacing below image */
+}
+
+/* Dark Mode - Green Border for Sport Images */
+body.dark-mode .sport-image {
+  border-color: #5cb85c;
+}
+
+/* Active Activities Section */
+#active-activities {
+  padding: 70px 0; /* Increased vertical padding */
+  text-align: center;
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  color: #333;
+}
+
+/* Dark Mode for Active Activities Section */
+body.dark-mode #active-activities {
+  background: linear-gradient(135deg, #121212, #1a1a1a);
+  color: #5cb85c;
+}
+
+/* Sports Container */
+.sports-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; /* Increased gap between cards */
+  padding: 20px;
+}
+
+/* Individual Sport Card (Enlarged) */
+.sport {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px; /* Increased padding */
+  width: 380px;  /* Increased card width */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Dark Mode for Sport Cards */
+body.dark-mode .sport {
+  background: #1e1e1e;
+  color: #5cb85c;
+  box-shadow: 0 5px 15px rgba(92, 184, 92, 0.3);
+}
+
+/* Hover Effect for Sport Cards */
+.sport:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode - Hover for Sport Cards */
+body.dark-mode .sport:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(92, 184, 92, 0.4);
+}
+
+/* Text Styling in Sport Cards - Enlarged */
+.sport p {
+  font-size: 1.4em; /* Increased from 1.2em */
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Dark Mode Text in Sport Cards */
+body.dark-mode .sport p {
+  color: #5cb85c;
+}
+
+/* Athlete Names in Bold - Enlarged */
+.sport strong {
+  color: #007BFF;
+  font-size: 1.5em; /* Increased from 1.3em */
+}
+
+/* Dark Mode - Athlete Names */
+body.dark-mode .sport strong {
+  color: #5cb85c;
+}
+
+/* Section Titles */
+#active-activities h2 {
+  font-size: 3.5em;
+}
+
+#active-activities p {
+  font-size: 2em;
+}
+
+
+
+
+
+
+/* Instruments Section */
+#instruments {
+  background: linear-gradient(to bottom right, #f0f0f0, #ffffff); /* Soft background */
+  color: #333;
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+/* Floating Music Notes */
+#instruments::before {
+  content: '♪ ♬ ♩ ♫';
+  font-size: 4em;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  color: rgba(0, 0, 0, 0.1);
+  animation: floatNotes 5s infinite alternate ease-in-out;
+}
+
+@keyframes floatNotes {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+/* Instrument Container */
+.music-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Instrument Cards */
+.instrument {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 60%;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover Glow Effect */
+.instrument:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+}
+
+/* Instrument Images */
+.instrument-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 60%;
+}
+
+/* Instrument Names */
+.instrument-name {
+  position: absolute;
+  bottom: -30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007BFF; /* Blue accent */
+}
+
+/* Dark Mode */
+body.dark-mode #instruments {
+  background: linear-gradient(to bottom right, #1a1a1a, #2a2a2a);
+  color: white;
+}
+
+body.dark-mode .instrument {
+  background: #222;
+  box-shadow: 0 8px 20px rgba(0, 255, 135, 0.3);
+}
+
+body.dark-mode .instrument-name {
+  color: #5cb85c; /* Green accent */
+}
+
+/* Dark Mode Floating Notes */
+body.dark-mode #instruments::before {
+  color: rgba(0, 255, 135, 0.2);
+}
+
+/* Dark Mode - Instruments Section */
+body.dark-mode #instruments h2,
+body.dark-mode #instruments p {
+  color: #5cb85c; /* Green accent */
+}
+
+
+/* Section Titles */
+#instruments h2{
+  font-size: 3.5em;
+}
+
+#instruments p{
+  font-size: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Interests Section */
+#interests {
+  background: linear-gradient(135deg, #f8f9fa, #e3e3e3);
+  color: #333;
+  padding: 80px 20px;  /* Increased padding for a larger section */
+  text-align: center;
+  position: relative;
+}
+
+/* Dark Mode */
+body.dark-mode #interests {
+  background: linear-gradient(135deg, #121212, #1a1a1a);
+  color: #5cb85c;
+}
+
+/* Interest Grid - Staggered Layout */
+.interests-container {
+  display: grid;
+  /* Increase min width to make cards wider */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1400px;  /* Increased container width */
+  margin: auto;
+}
+
+/* Interest Item - Card Effect, let cards grow with content */
+.interest-item {
+  background: white;
+  padding: 30px;          /* Increased padding */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  cursor: pointer;
+  height: auto;           /* Allow card to grow with content */
+}
+
+.interest-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Increase font sizes within cards */
+.interest-item h3 {
+  font-size: 1.8em;  /* Slightly larger title */
+  margin-bottom: 10px;
+  color: #007BFF;
+  transition: color 0.3s ease-in-out;
+}
+
+.interest-item:hover h3 {
+  color: #0056b3;
+}
+
+body.dark-mode .interest-item h3 {
+  color: #5cb85c;
+}
+
+body.dark-mode .interest-item:hover h3 {
+  color: #3a8f3a;
+}
+
+.interest-details p {
+  font-size: 1.3em;  /* Increased description text */
+  color: #444;
+  line-height: 1.5;
+  text-align: left;
+  padding: 10px;
+}
+
+body.dark-mode .interest-details p {
+  color: #ddd;
+}
+
+/* Image & Video Styles - Ensure media scales properly */
+.interest-item img,
+.interest-item video {
+  width: 100%;
+  height: auto;
+  max-height: 200px;  /* Prevent stretching, adjust if needed */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, max-height 0.3s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+/* Optional: If you want a horizontal layout for cards that include both video and text,*/
+   add a class (e.g., .flex-layout) to those .interest-item elements and use:
+   
+.interest-item.flex-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.interest-item.flex-layout video,
+.interest-item.flex-layout .interest-details {
+  flex: 1;
+}
+
+
+/* Section Titles */
+#interests h2 {
+  font-size: 3.5em;
+}
+
+#interests p {
+  font-size: 2em;
+  color: #0a2c10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media / shoows/movies sections i like  */
+
+/* Responsive Grid Layout */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Increased min width from 300px to 400px */
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Media Item Styling */
+.media-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-item:hover {
+  transform: scale(1.03) rotate(0.5deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Iframe Styling - Enlarged */
+.media-item iframe {
+  width: 100%;
+  height: 400px;  /* Increased height from 315px */
+  border: none;
+  transition: filter 0.3s ease;
+}
+
+.media-item:hover iframe {
+  filter: brightness(1.1);
+}
+
+/* Overlay for Media Description remains unchanged */
+.media-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Darker overlay for contrast */
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+.media-item:hover .media-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dark Mode Overrides for Media Section */
+body.dark-mode #media {
+  background: linear-gradient(135deg, #121212, #1a1a1a);
+}
+
+body.dark-mode #media h2 {
+  color: #5cb85c; /* Green title */
+}
+
+body.dark-mode .media-item {
+  background: #222;
+  box-shadow: 0 5px 15px rgba(92,184,92,0.3);
+}
+
+body.dark-mode .media-item:hover {
+  transform: scale(1.03) rotate(0.5deg);
+  box-shadow: 0 10px 20px rgba(92,184,92,0.4);
+}
+
+body.dark-mode .media-item iframe {
+  filter: brightness(0.9);
+}
+
+body.dark-mode .media-description {
+  background: rgba(92, 184, 92, 0.65); /* Green overlay */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .media-description h3 {
+  color: #fff;
+}
+
+body.dark-mode .media-description p {
+  color: #eee;
+}
+/* Section Titles */
+#Media h2{
+  font-size: 3.5em;
+  text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+/* Contact Section Specific Styling */
+#contact {
+  background-color: black;
+  color: #33ff33;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  width: 100%;
+  height: 100vh; /* Makes the section take up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Terminal Container */
+#contact #terminal {
+  background-color: black;
+  border: 2px solid #33ff33;
+  padding: 30px;         /* Increased padding */
+  width: 100%;
+  max-width: 800px;      /* Increased max-width */
+  min-height: 500px;     /* Added min-height to enlarge the box */
+  margin: auto;
+  box-shadow: 0px 0px 15px #33ff33;
+  text-align: left;
+}
+
+
+/* Terminal Output - Simulated Welcome Message */
+#contact #terminal-output::before {
+  content: "Hillo world!\a:) \aWelcome to the Contact Terminal.\aType your message below and press 'Send'.";
+  white-space: pre-wrap;
+  display: block;
+  font-size: 2em;
+  color: #33ff33;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+#contact label {
+  display: block;
+  color: #33ff33;
+  margin-top: 15px;
+}
+
+/* Input and Textarea */
+#contact input,
+#contact textarea {
+  width: 100%;
+  background-color: black;
+  border: 2px solid #33ff33;
+  color: #33ff33;
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px;
+  outline: none;
+  resize: none;
+}
+
+/* Placeholder Styling */
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #33ff33;
+  opacity: 0.8;
+}
+
+/* Submit Button */
+#contact .submit-button {
+  background-color: black;
+  color: #33ff33;
+  border: 2px solid #33ff33;
+  padding: 15px;
+  font-size: 3em;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+}
+
+#contact .submit-button:hover {
+  background-color: #33ff33;
+  color: black;
+  font-weight: bold;
+}
+
+/* Flickering Text Effect */
+#contact #terminal,
+#contact #terminal-output {
+  animation: flicker 3.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.95; }  /* Only a 5% reduction */
+  100% { opacity: 1; }
+}
+
+
+#contact #terminal,
+#contact #terminal-output {
+  animation: flicker 1s infinite alternate;
+}
+
+/* Title Styling */
+#contact h2 {
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* Increase overall font size in the terminal */
+#terminal {
+  font-size: 1.8em;  /* Adjust as needed */
+}
+
+/* Make prompt labels larger */
+#terminal label {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+/* Increase the font size of the input and textarea text */
+#terminal input,
+#terminal textarea {
+  font-size: 1.6em;
+  padding: 8px;
+}
+
+
+
+
+
+/* Contact Section Specific Styling */
+#contact {
+  background-color: black;
+  color: #33ff33;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  width: 100%;
+  min-height: 120vh;  /* Increased section height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Terminal Container - Larger Terminal Box */
+#contact #terminal {
+  background-color: black;
+  border: 2px solid #33ff33;
+  padding: 40px;           /* Increased padding */
+  width: 100%;
+  max-width: 1000px;       /* Increased max-width */
+  min-height: 600px;       /* Increased minimum height */
+  margin: auto;
+  box-shadow: 0px 0px 15px #33ff33;
+  text-align: left;
+  font-size: 1.8em;
+}
+
+/* Terminal Output - Simulated Welcome Message */
+#contact #terminal-output::before {
+  content: "Hillo world!\a:) \aWelcome to the Contact Terminal.\aType your message below and press 'Send'.";
+  white-space: pre-wrap;
+  display: block;
+  font-size: 2em;
+  color: #33ff33;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+#contact label {
+  display: block;
+  color: #33ff33;
+  margin-top: 15px;
+  font-size: 1.8em;
+}
+
+/* Input and Textarea */
+#contact input,
+#contact textarea {
+  width: 100%;
+  background-color: black;
+  border: 2px solid #33ff33;
+  color: #33ff33;
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px;
+  outline: none;
+  resize: none;
+  font-size: 1.6em;
+}
+
+/* Placeholder Styling */
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #33ff33;
+  opacity: 0.8;
+}
+
+/* Submit Button - Bigger */
+#contact .submit-button {
+  background-color: black;
+  color: #33ff33;
+  border: 2px solid #33ff33;
+  padding: 20px;  /* Increased padding */
+  font-size: 3em;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+}
+
+#contact .submit-button:hover {
+  background-color: #33ff33;
+  color: black;
+  font-weight: bold;
+}
+
+/* Flickering Text Effect */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+#contact #terminal,
+#contact #terminal-output {
+  animation: flicker 3.5s infinite alternate;
+}
+
+/* Title Styling */
+#contact h2 {
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dark Mode */
+body.dark-mode .project-card {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark-mode .resume-button {
+  background-color: #217dbb;
+}
+
+/* Light Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #663399;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+/* Smooth Transitions */
+* {
+  transition: all 0.1s ease-in-out;
+}
+.github-link {
+  pointer-events: auto;
+}
+
+.cursor,
+.cursor-follower {
+  pointer-events: none;
+}
+
+#building h2,
+.interactive-playground h3 {
+  text-align: center;
+}
+
+body.dark-mode #building h2 {
+  color: #5cb85c;
+}
+body.dark-mode #courses h2 {
+  color: #5cb85c;
+}
+#projects h2,
+#projects .project-card h3 {
+  text-align: center;
+}
+body.dark-mode #projects p {
+  color: #b85ca1;
+}
+
+#interests h2 {
+  text-align: center;
+}
