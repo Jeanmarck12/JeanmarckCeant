@@ -2059,3 +2059,92 @@ body.dark-mode #projects p {
 #interests h2 {
   text-align: center;
 }
+/* Card Grid */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamic columns */
+  gap: 15px;
+  padding: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Individual Cards */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  max-width: 100%; /* Ensures no overflow */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Images */
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 150px; /* Prevents images from taking too much space */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Card Title */
+.card h3 {
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+/* Card Description */
+.card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Adjustments for Mobile */
+@media screen and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller cards on small screens */
+    gap: 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-container {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .card img {
+    max-height: 120px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+}
