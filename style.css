@@ -545,8 +545,8 @@ body {
   
   /* Language Section - Updated */
   #languages-section {
-    width: 60%;
-    max-width: 2000px; /* Increased width */
+    width: 100%;
+    max-width: 1500px; /* Increased width */
     margin: auto;
     /* Red to bluish gradient background */
     background: linear-gradient(135deg, #ff9999, #99ccff);
