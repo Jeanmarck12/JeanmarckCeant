@@ -1981,7 +1981,7 @@ body.dark-mode .fixed-nav .moon-icon {
   
   /* Terminal Welcome Message */
   #contact #terminal-output::before {
-    content: "Hillo world!\a:) \aWelcome to the Contact Terminal.\aType your message below and press 'Send'.";
+    content: "Hello world!\a:) \aWelcome to the Contact Terminal.\aType your message below and press 'Send'.";
     white-space: pre-wrap;
     display: block;
     font-size: clamp(1.2em, 3vw, 2em);
