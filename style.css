@@ -1788,41 +1788,42 @@ body.dark-mode .media-description p {
 
 
 
-
-/* Contact Section Specific Styling */
+/* Contact Section Styling - Fullscreen, Responsive */
 #contact {
   background-color: black;
   color: #33ff33;
   font-family: "Courier New", Courier, monospace;
   text-align: center;
   width: 100%;
-  min-height: 120vh;  /* Increased section height */
+  min-height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Terminal Container - Larger Terminal Box */
+/* Terminal Container - Expands on Larger Screens */
 #contact #terminal {
   background-color: black;
   border: 2px solid #33ff33;
-  padding: 40px;           /* Increased padding */
-  width: 100%;
-  max-width: 1000px;       /* Increased max-width */
-  min-height: 600px;       /* Increased minimum height */
-  margin: auto;
+  padding: clamp(20px, 5vw, 50px); /* Scales padding */
+  width: 90%;
+  max-width: 1000px; /* Caps max size */
+  min-height: clamp(400px, 50vh, 600px); /* Scales height dynamically */
   box-shadow: 0px 0px 15px #33ff33;
   text-align: left;
-  font-size: 1.8em;
+  font-size: clamp(1em, 2vw, 1.8em);
+  overflow: hidden;
 }
 
-/* Terminal Output - Simulated Welcome Message */
+/* Terminal Welcome Message */
 #contact #terminal-output::before {
   content: "Hillo world!\a:) \aWelcome to the Contact Terminal.\aType your message below and press 'Send'.";
   white-space: pre-wrap;
   display: block;
-  font-size: 2em;
+  font-size: clamp(1.2em, 3vw, 2em);
   color: #33ff33;
   margin-bottom: 20px;
 }
@@ -1832,10 +1833,10 @@ body.dark-mode .media-description p {
   display: block;
   color: #33ff33;
   margin-top: 15px;
-  font-size: 1.8em;
+  font-size: clamp(1em, 2vw, 1.8em);
 }
 
-/* Input and Textarea */
+/* Input and Textarea - Scales for Mobile */
 #contact input,
 #contact textarea {
   width: 100%;
@@ -1846,7 +1847,8 @@ body.dark-mode .media-description p {
   padding: 10px;
   outline: none;
   resize: none;
-  font-size: 1.6em;
+  font-size: clamp(1em, 2vw, 1.6em);
+  box-sizing: border-box;
 }
 
 /* Placeholder Styling */
@@ -1856,17 +1858,18 @@ body.dark-mode .media-description p {
   opacity: 0.8;
 }
 
-/* Submit Button - Bigger */
+/* Submit Button - Scales Responsively */
 #contact .submit-button {
   background-color: black;
   color: #33ff33;
   border: 2px solid #33ff33;
-  padding: 20px;  /* Increased padding */
-  font-size: 3em;
+  padding: clamp(10px, 3vw, 20px);
+  font-size: clamp(1.2em, 3vw, 2.5em);
   margin-top: 20px;
   cursor: pointer;
   font-family: "Courier New", Courier, monospace;
   width: 100%;
+  max-width: 500px;
 }
 
 #contact .submit-button:hover {
@@ -1889,9 +1892,63 @@ body.dark-mode .media-description p {
 
 /* Title Styling */
 #contact h2 {
-  font-size: 4em;
+  font-size: clamp(2em, 5vw, 4em);
   text-align: center;
   margin-bottom: 20px;
+}
+
+/* Responsive Adjustments for Tablets and Phones */
+@media screen and (max-width: 768px) {
+  #contact #terminal {
+    width: 95%;
+    min-height: 50vh;
+    font-size: 1.2em;
+  }
+
+  #contact #terminal-output::before {
+    font-size: 1.5em;
+  }
+
+  #contact label {
+    font-size: 1.3em;
+  }
+
+  #contact input,
+  #contact textarea {
+    font-size: 1.2em;
+  }
+
+  #contact .submit-button {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #contact {
+    padding: 10px;
+  }
+
+  #contact #terminal {
+    padding: 15px;
+    font-size: 1em;
+  }
+
+  #contact #terminal-output::before {
+    font-size: 1.2em;
+  }
+
+  #contact label {
+    font-size: 1.1em;
+  }
+
+  #contact input,
+  #contact textarea {
+    font-size: 1em;
+  }
+
+  #contact .submit-button {
+    font-size: 1.2em;
+  }
 }
 
 
