@@ -134,13 +134,15 @@ body {
     text-align: center;
   }
   
-  header nav ul {
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-  }
+/* Base styles for header nav */
+header nav ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  /* By default, don’t wrap so that on larger screens it stays in one line */
+  flex-wrap: nowrap;
+}
   
   
   header nav ul li {
@@ -180,12 +182,91 @@ body {
   }
   
   /* Adjust the toggle switch so it’s vertically centered and without extra margins */
-  .fixed-nav .switch {
-    margin: 0;
-    vertical-align: middle;
-  }
-  
-  
+ /* Toggle Switch Container */
+.fixed-nav .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* Hide Default Checkbox */
+.fixed-nav .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Toggle Slider */
+.fixed-nav .slider {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+  border-radius: 15px;
+  transition: background 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+/* Toggle Knob */
+.fixed-nav .slider::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  top: 3px;
+  left: 3px;
+}
+
+/* Sun and Moon Icons */
+.fixed-nav .sun-icon,
+.fixed-nav .moon-icon {
+  font-size: 1.2em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fixed-nav .sun-icon {
+  left: 8px;
+  color: #ffdd57;  /* Sun yellow */
+}
+
+.fixed-nav .moon-icon {
+  right: 8px;
+  color: #b3c7ff;  /* Base moon color */
+  display: none;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .fixed-nav .slider {
+  background: #222;
+}
+
+body.dark-mode .fixed-nav .slider::before {
+  transform: translateX(30px);
+  background: #ffdd57;
+  box-shadow: 0 0 10px rgba(255, 223, 77, 0.8);
+}
+
+body.dark-mode .fixed-nav .sun-icon {
+  display: none;
+}
+
+body.dark-mode .fixed-nav .moon-icon {
+  display: block;
+  color: #5cb85c;  /* Moon icon turns green */
+}
+
   
   
   
@@ -543,78 +624,112 @@ body {
   
   
   
-  /* Language Section - Updated */
+/* Language Section - Updated */
+#languages-section {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  background: linear-gradient(135deg, #ff9999, #99ccff);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 40px; /* Base padding */
+  text-align: center;
+  position: relative;
+}
+
+/* Flag Container */
+#flag-container {
+  width: 300px;
+  max-width: 90%;  /* Allow some responsiveness */
+  margin: 20px auto;  /* Center horizontally with a modest margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Flag Image */
+#flag-background {
+  display: block;       /* Ensure block-level for centering */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 60px;
+  margin: 0 auto;       /* Center the image within the container */
+}
+
+/* Language Switcher Button */
+#language-switcher {
+  margin-top: 20px;  /* Fixed margin-top */
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;  /* Reduced padding for a more compact look */
+  font-size: 1.5em;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+#language-switcher:hover {
+  background-color: #003f80;
+}
+
+/* Section Headings and Text */
+#languages-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#languages-section p#instruction-text {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#proficiency-card {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Media Queries for Tablets and Phones */
+@media screen and (max-width: 768px) {
   #languages-section {
-    width: 100%;
-    max-width: 1500px; /* Increased width */
-    margin: auto;
-    /* Red to bluish gradient background */
-    background: linear-gradient(135deg, #ff9999, #99ccff);
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 60px; /* Increased padding */
-    text-align: center;
-    position: relative;
+    padding: 30px;
   }
-  
   #flag-container {
-    width: 100%;
-    height: 100%;
-    margin:  auto; /* Center the container horizontally */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px;
-    overflow: hidden;
+    width: 250px;
+    padding: 20px;
   }
-  
-  #flag-background {
-    display: block;       /* Make it a block element */
-    margin: 0 auto;       /* Center the image within its container */
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 60px;
-  }
-  
   #language-switcher {
-    margin-top: 20px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    padding: 14px 24px;
-    font-size: 1.9em;  /* Bigger button text */
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-weight: bold;
+    font-size: 1.4em;
+    padding: 8px 16px;
+    margin-top: 15px;
   }
-  
-  #language-switcher:hover {
-    background-color: #003f80;
-  }
-  
-  
-  
-  
-  
   #languages-section h2 {
-    font-size: 2.9em;       /* Increase the header size */
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 2.2em;
   }
-  
   #languages-section p#instruction-text {
-    font-size: 2.5em;     /* Increase the instruction text size */
-    margin-bottom: 20px;
+    font-size: 1.6em;
   }
-  
   #proficiency-card {
-    font-size: 3em;       /* Increase the proficiency text size */
-    font-weight: bold;
-    margin-top: 20px;
+    font-size: 2em;
   }
-  
+}
+
+/* On small screens, allow wrapping */
+@media screen and (max-width: 480px) {
+  header nav ul {
+    flex-wrap: wrap;
+  }
+  header nav ul li {
+    margin: 0 0.25rem;  /* Reduce horizontal margin */
+    font-size: 0.9em;   /* Reduce font size */
+  }
+}
+
   
   
   /* Dark Mode Overrides for Language Section */
@@ -2196,140 +2311,11 @@ body {
   }
   
   
-  /* Universal Shrinking */
-  body {
-    font-size: clamp(14px, 1.2vw, 18px); /* Reduced default size */
-  }
-  
-  /* Header & Navbar */
-  header {
-    padding: 0.8rem;
-  }
-  
-  header nav ul li {
-    margin: 0 1rem;
-  }
-  
-  header nav ul li a {
-    font-size: 1rem;
-  }
-  
-  /* Section Sizing */
-  section {
-    padding: 40px 10px;
-    min-height: auto;
-  }
-  
-  /* Cards - Shrunk */
-  .card {
-    padding: 15px;
-    max-width: 300px;
-    font-size: 0.9rem;
-  }
-  
-  .card img {
-    max-height: 100px;
-  }
-  
-  /* Text Resizing */
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  h3 {
-    font-size: 1.2rem;
-  }
-  
-  p {
-    font-size: 0.9rem;
-  }
-  
-  /* Buttons */
-  button {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-  
-  /* Reduce Contact Section Size */
-  #contact #terminal {
-    font-size: 0.9rem;
-    padding: 15px;
-  }
-  
-  /* Adjustments for Mobile */
-  @media screen and (max-width: 768px) {
-    section {
-      padding: 30px 5px;
-    }
-  
-    .card {
-      max-width: 100%;
-      padding: 10px;
-    }
-  
-    h1 {
-      font-size: 1.5rem;
-    }
-  
-    h2 {
-      font-size: 1.2rem;
-    }
-  
-    h3 {
-      font-size: 1rem;
-    }
-  
-    p {
-      font-size: 0.85rem;
-    }
-  
-    button {
-      font-size: 0.8rem;
-      padding: 6px 10px;
-    }
-  }
-  
-  @media screen and (max-width: 500px) {
-    .card img {
-      max-height: 80px;
-    }
-  
-    h1 {
-      font-size: 1.2rem;
-    }
-  
-    h2 {
-      font-size: 1rem;
-    }
-  
-    h3 {
-      font-size: 0.9rem;
-    }
-  
-    p {
-      font-size: 0.8rem;
-    }
-  
-    button {
-      font-size: 0.7rem;
-      padding: 5px 8px;
-    }
-  
-    #contact #terminal {
-      font-size: 0.8rem;
-    }
-  }
+ 
 
-  /* Center the main content */
-  .container, .wrapper {
-    margin: 0 auto;
-    max-width: 1200px; /* Adjust as needed */
-    padding: 0 20px;
-  }
+
+
+
 
 
 
