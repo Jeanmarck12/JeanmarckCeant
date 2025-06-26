@@ -770,6 +770,12 @@ body.dark-mode .fixed-nav .moon-icon {
   
   
   /* Courses Section */
+
+
+  .course-card.purple-border {
+  border-left: 5px solid #8a2be2; /* Purple */
+}
+
   #courses {
     background: linear-gradient(135deg, #12102b, #4b0082); /* Dark blue-purple theme */
     color: white;
@@ -2311,7 +2317,8 @@ body.dark-mode .fixed-nav .moon-icon {
   }
   
   
- 
+
+
 
 
 
